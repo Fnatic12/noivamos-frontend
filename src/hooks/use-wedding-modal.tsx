@@ -12,9 +12,22 @@ type WeddingModalStore = {
   setWeddingData: (data: WeddingData) => void;
 };
 
+const getSavedWeddingData = (): WeddingData | null => {
+  const savedData = localStorage.getItem('weddingData');
+  if (savedData) {
+    try {
+      return JSON.parse(savedData);
+    } catch (error) {
+      console.error('Error parsing wedding data:', error);
+      return null;
+    }
+  }
+  return null;
+};
+
 export const useWeddingModal = create<WeddingModalStore>((set) => ({
   hasSeenModal: localStorage.getItem('hasSeenWeddingModal') === 'true',
-  weddingData: null,
+  weddingData: getSavedWeddingData(),
   isOpen: false,
   markAsSeen: () => {
     localStorage.setItem('hasSeenWeddingModal', 'true');
