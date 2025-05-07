@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Eye, EyeOff, Apple, Google, Microsoft } from 'lucide-react';
+import { Eye, EyeOff, Apple, Mail, Laptop } from 'lucide-react';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -25,12 +25,12 @@ const LoginForm = () => {
       
       <div className="flex flex-col space-y-4 mb-8">
         <button className="w-full flex items-center justify-start px-4 py-4 border border-noivamos-border rounded-lg bg-white hover:bg-gray-50 transition-colors">
-          <Google size={20} className="mr-4" />
+          <Mail size={20} className="mr-4" />
           <span className="font-avenir text-base">Entrar com uma conta Google</span>
         </button>
         
         <button className="w-full flex items-center justify-start px-4 py-4 border border-noivamos-border rounded-lg bg-white hover:bg-gray-50 transition-colors">
-          <Microsoft size={20} className="mr-4" />
+          <Laptop size={20} className="mr-4" />
           <span className="font-avenir text-base">Entrar com uma conta Microsoft</span>
         </button>
         
