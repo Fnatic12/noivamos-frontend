@@ -8,6 +8,7 @@ import GuestsSection from '@/components/wedding/GuestsSection';
 import CategoryModal from '@/components/wedding/CategoryModal';
 import GuestModal from '@/components/wedding/GuestModal';
 import TaskModal from '@/components/wedding/TaskModal';
+import WithdrawModal from '@/components/wedding/WithdrawModal';
 import { format, differenceInDays } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { Edit } from 'lucide-react';
@@ -21,6 +22,7 @@ const WeddingDashboard: React.FC<WeddingDashboardProps> = ({ weddingData }) => {
   const [isCategoryModalOpen, setIsCategoryModalOpen] = useState(false);
   const [isGuestModalOpen, setIsGuestModalOpen] = useState(false);
   const [isTaskModalOpen, setIsTaskModalOpen] = useState(false);
+  const [isWithdrawModalOpen, setIsWithdrawModalOpen] = useState(false);
   const { toast } = useToast();
 
   // Parse wedding date to calculate days remaining
@@ -94,11 +96,8 @@ const WeddingDashboard: React.FC<WeddingDashboardProps> = ({ weddingData }) => {
               <h2 className="font-medium mb-2">Valor de presentes recebidos</h2>
               <p className="text-xl font-bold mb-4">R$ 200,00</p>
               <button 
-                className="w-full py-2 bg-noivamos-gold text-white rounded-md hover:bg-noivamos-gold/90"
-                onClick={() => toast({
-                  title: "Funcionalidade em desenvolvimento",
-                  description: "Sacar valores estará disponível em breve."
-                })}
+                className="w-full py-2 bg-[#B28800] text-white rounded-md hover:bg-[#a07800]"
+                onClick={() => setIsWithdrawModalOpen(true)}
               >
                 Sacar valor
               </button>
@@ -131,6 +130,11 @@ const WeddingDashboard: React.FC<WeddingDashboardProps> = ({ weddingData }) => {
       <TaskModal
         isOpen={isTaskModalOpen}
         onClose={() => setIsTaskModalOpen(false)}
+      />
+      <WithdrawModal
+        isOpen={isWithdrawModalOpen}
+        onClose={() => setIsWithdrawModalOpen(false)}
+        availableAmount={200.00}
       />
     </div>
   );

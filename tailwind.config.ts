@@ -64,8 +64,8 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				noivamos: {
-					gold: '#FFC200',
-					'gold-dark': '#d6a900',
+					gold: '#B28800',
+					'gold-dark': '#a07800',
 					border: '#AAAAB0',
 					placeholder: '#777777'
 				}
