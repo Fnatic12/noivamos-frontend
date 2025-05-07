@@ -71,7 +71,7 @@ const BudgetSection: React.FC<BudgetSectionProps> = ({ budget, onAddCategory }) 
       <h2 className="text-2xl font-bold mb-4">Controle Financeiro</h2>
       
       <div className="flex items-center gap-2 mb-6">
-        <h3 className="text-xl font-medium">Orçamento: {formatCurrency(totalBudget)}</h3>
+        <h3 className="text-xl font-medium">Orçamento: {budget}</h3>
         <button 
           onClick={handleEditBudget}
           className="p-1 text-gray-500 hover:text-gray-700"
@@ -80,9 +80,9 @@ const BudgetSection: React.FC<BudgetSectionProps> = ({ budget, onAddCategory }) 
         </button>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
-        <div className="col-span-2">
-          <ChartContainer className="h-80" config={{
+      <div className="grid grid-cols-1 mb-6 relative">
+        <div className="flex justify-center items-center">
+          <ChartContainer className="h-80 w-80 mx-auto" config={{
             paid: { label: "Valor já pago", color: "#E57373" },
             expected: { label: "Gastos previstos", color: "#FFB74D" },
             available: { label: "Valor disponível", color: "#81C784" }
@@ -104,26 +104,27 @@ const BudgetSection: React.FC<BudgetSectionProps> = ({ budget, onAddCategory }) 
               <ChartTooltip content={<ChartTooltipContent />} />
             </PieChart>
           </ChartContainer>
-        </div>
-        
-        <div className="flex flex-col justify-center">
-          <div className="mb-4">
-            <h4 className="text-red-400 mb-1">R$ {paidValue.toLocaleString('pt-BR')}</h4>
+          
+          {/* Positioned values around the chart */}
+          <div className="absolute left-0 top-1/4 text-left">
+            <h4 className="text-red-400 text-xl font-medium">R$ {paidValue.toLocaleString('pt-BR')}</h4>
             <p className="text-gray-600">Valor já pago</p>
           </div>
-          <div className="mb-4">
-            <h4 className="text-amber-400 mb-1">R$ {expectedCosts.toLocaleString('pt-BR')}</h4>
+          
+          <div className="absolute right-0 top-1/4 text-right">
+            <h4 className="text-amber-400 text-xl font-medium">R$ {expectedCosts.toLocaleString('pt-BR')}</h4>
             <p className="text-gray-600">Gastos previstos</p>
           </div>
-          <div>
-            <h4 className="text-green-500 mb-1">R$ {availableValue.toLocaleString('pt-BR')}</h4>
+          
+          <div className="absolute bottom-0 w-full text-center">
+            <h4 className="text-green-500 text-xl font-medium">R$ {availableValue.toLocaleString('pt-BR')}</h4>
             <p className="text-gray-600">Valor disponível</p>
           </div>
         </div>
       </div>
       
       <h3 className="text-xl font-medium mb-4">Faturas</h3>
-      <Table>
+      <Table className="overflow-hidden rounded-lg border border-gray-200">
         <TableHeader>
           <TableRow className="bg-[#B28800] text-white">
             <TableHead className="font-semibold text-white">Categoria</TableHead>

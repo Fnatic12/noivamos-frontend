@@ -50,7 +50,7 @@ const TasksSection: React.FC<TasksSectionProps> = ({ onAddTask }) => {
 
   return (
     <div className="mb-16">
-      <h2 className="text-2xl font-bold mb-6">Lista de Tarefas</h2>
+      <h2 className="text-2xl mb-6">Lista de Tarefas</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
         <div className="col-span-1 bg-white p-6 rounded-md shadow-sm flex items-center gap-4">
@@ -63,27 +63,19 @@ const TasksSection: React.FC<TasksSectionProps> = ({ onAddTask }) => {
           </div>
           <div>
             <h3 className="text-lg font-medium">Tarefas concluídas</h3>
-            <p className="text-xl font-bold">{completedTasks} de {totalTasks}</p>
+            <p className="text-xl font-medium">{completedTasks} de {totalTasks}</p>
           </div>
-        </div>
-        
-        <div className="col-span-3 md:pl-6">
-          <input
-            type="search"
-            placeholder="Pesquisar tarefas..."
-            className="border border-gray-300 rounded-md px-4 py-2 w-full"
-          />
         </div>
       </div>
       
-      <Table>
-        <TableHeader className="bg-noivamos-gold text-white">
-          <TableRow>
-            <TableHead className="font-semibold w-24">Completa</TableHead>
-            <TableHead className="font-semibold">Tarefa</TableHead>
-            <TableHead className="font-semibold">Data</TableHead>
-            <TableHead className="font-semibold w-24">Editar</TableHead>
-            <TableHead className="font-semibold w-24">Excluir</TableHead>
+      <Table className="overflow-hidden rounded-lg border border-gray-200">
+        <TableHeader>
+          <TableRow className="bg-[#B28800]">
+            <TableHead className="text-white">Completa</TableHead>
+            <TableHead className="text-white">Tarefa</TableHead>
+            <TableHead className="text-white">Data</TableHead>
+            <TableHead className="text-white w-24">Editar</TableHead>
+            <TableHead className="text-white w-24">Excluir</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -118,7 +110,7 @@ const TasksSection: React.FC<TasksSectionProps> = ({ onAddTask }) => {
         <Button 
           onClick={onAddTask}
           variant="outline" 
-          className="bg-noivamos-gold text-white hover:bg-noivamos-gold/90"
+          className="bg-[#B28800] text-white hover:bg-[#B28800]/90"
         >
           <Plus size={16} className="mr-1" />
           Adicionar nova tarefa

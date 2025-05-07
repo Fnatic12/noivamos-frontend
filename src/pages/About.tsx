@@ -23,7 +23,7 @@ const About = () => {
           </div>
           
           {/* Content section */}
-          <div className="w-full md:w-2/3 text-center md:text-left">
+          <div className="w-full md:w-2/3 text-center md:text-center">
             <h1 className="text-5xl font-garamond text-noivamos-gold mb-8">
               QUEM SOMOS
             </h1>
