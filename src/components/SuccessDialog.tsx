@@ -11,9 +11,18 @@ import { X } from 'lucide-react';
 interface SuccessDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  title?: string;
+  message?: string;
+  buttonText?: string;
 }
 
-const SuccessDialog = ({ open, onOpenChange }: SuccessDialogProps) => {
+const SuccessDialog = ({ 
+  open, 
+  onOpenChange, 
+  title = "CONTA CRIADA COM SUCESSO", 
+  message = "Agora é só aproveitar. Comece explorando todos os recursos disponíveis.",
+  buttonText = "Entendido"
+}: SuccessDialogProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
@@ -25,20 +34,20 @@ const SuccessDialog = ({ open, onOpenChange }: SuccessDialogProps) => {
             <X size={24} />
           </button>
           <DialogTitle className="text-center font-garamond text-xl text-[#B28800]">
-            CONTA CRIADA COM SUCESSO
+            {title}
           </DialogTitle>
         </DialogHeader>
         
         <div className="p-4 text-center">
           <p className="mb-6 text-gray-700">
-            Agora é só aproveitar. Comece explorando todos os recursos disponíveis.
+            {message}
           </p>
           
           <button
             onClick={() => onOpenChange(false)}
             className="w-full py-3 bg-[#B28800] hover:bg-[#9a7600] text-white font-avenir font-medium rounded-lg transition-colors"
           >
-            Entendido
+            {buttonText}
           </button>
         </div>
       </DialogContent>

@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Eye, EyeOff, Apple, Mail, Laptop } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -91,10 +92,10 @@ const LoginForm = () => {
       
       <div className="mt-4 text-center">
         <p className="font-avenir text-sm mb-2">
-          Esqueceu sua senha? <a href="#" className="font-bold text-[#B28800] hover:underline">clique aqui</a>
+          Esqueceu sua senha? <Link to="/forgot-password" className="font-bold text-[#B28800] hover:underline">clique aqui</Link>
         </p>
         <p className="font-avenir text-sm">
-          Não tem conta? <a href="/register" className="font-bold text-[#B28800] hover:underline">registre-se</a>
+          Não tem conta? <Link to="/register" className="font-bold text-[#B28800] hover:underline">registre-se</Link>
         </p>
       </div>
     </div>
