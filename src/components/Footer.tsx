@@ -7,11 +7,7 @@ const Footer = () => {
     <footer className="w-full bg-[#B28800] mt-auto">
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 py-6 flex justify-between items-center">
         <div>
-          <img 
-            src="/lovable-uploads/a371eb6e-9d00-423b-bc90-a1baed416804.png" 
-            alt="Noivamos Logo" 
-            className="h-8 brightness-0 invert" 
-          />
+          <h2 className="font-garamond text-2xl font-bold text-white">Noivamos</h2>
         </div>
         <div className="flex items-center text-white">
           <span className="font-avenir mr-4 text-white">Acompanhe nossas redes sociais</span>

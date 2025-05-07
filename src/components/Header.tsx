@@ -7,7 +7,10 @@ const Header = () => {
   const location = useLocation();
   
   const isActive = (path: string) => {
-    return location.pathname === path;
+    if (path === '/') {
+      return location.pathname === path || location.pathname === '/create-site' || location.pathname.includes('/template/');
+    }
+    return location.pathname === path || location.pathname.startsWith(path);
   };
 
   return (
@@ -17,16 +20,16 @@ const Header = () => {
           <img 
             src="/lovable-uploads/a371eb6e-9d00-423b-bc90-a1baed416804.png" 
             alt="Noivamos Logo" 
-            className="h-8" // Reduced from h-10 to h-8
+            className="h-7" // Reduced from h-8 to h-7
           />
         </Link>
         <nav className="flex items-center">
           <div className="hidden md:flex items-center space-x-6 lg:space-x-12 mr-8 lg:mr-16">
             <Link 
-              to="/" 
+              to="/create-site" 
               className={cn(
                 "font-avenir text-base transition-colors",
-                isActive("/") ? "text-noivamos-gold" : "hover:text-noivamos-gold"
+                isActive("/") || isActive("/create-site") ? "text-noivamos-gold" : "hover:text-noivamos-gold"
               )}
             >
               Criar meu site
