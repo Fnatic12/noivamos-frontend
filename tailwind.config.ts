@@ -107,8 +107,39 @@ export default {
 			},
 			gridTemplateColumns: {
 				'12': 'repeat(12, minmax(0, 1fr))',
+			},
+			transformStyle: {
+				'3d': 'preserve-3d',
+			},
+			backfaceVisibility: {
+				'hidden': 'hidden',
+			},
+			perspective: {
+				'1000': '1000px',
+			},
+			rotate: {
+				'y-180': 'rotateY(180deg)',
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		function({ addUtilities }) {
+			const newUtilities = {
+				'.backface-hidden': {
+					'backface-visibility': 'hidden',
+				},
+				'.perspective-1000': {
+					'perspective': '1000px',
+				},
+				'.transform-style-3d': {
+					'transform-style': 'preserve-3d',
+				},
+				'.rotate-y-180': {
+					'transform': 'rotateY(180deg)',
+				}
+			}
+			addUtilities(newUtilities, ['responsive', 'hover'])
+		}
+	],
 } satisfies Config;
