@@ -14,7 +14,7 @@ const Footer = () => {
           />
         </div>
         <div className="flex items-center text-white">
-          <span className="font-avenir mr-4">Acompanhe nossas redes sociais</span>
+          <span className="font-avenir mr-4 text-white">Acompanhe nossas redes sociais</span>
           <a 
             href="https://instagram.com" 
             target="_blank" 

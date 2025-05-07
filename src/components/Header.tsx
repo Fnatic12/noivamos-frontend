@@ -17,7 +17,7 @@ const Header = () => {
           <img 
             src="/lovable-uploads/a371eb6e-9d00-423b-bc90-a1baed416804.png" 
             alt="Noivamos Logo" 
-            className="h-12"
+            className="h-10" // Reduced from h-12 to h-10
           />
         </Link>
         <nav className="flex items-center">
@@ -62,7 +62,7 @@ const Header = () => {
               to="/advisor" 
               className={cn(
                 "font-avenir text-base transition-colors",
-                isActive("/advisor") ? "text-noivamos-gold" : "hover:text-noivamos-gold"
+                isActive("/advisor") || location.pathname.includes("/advisor") ? "text-noivamos-gold" : "hover:text-noivamos-gold"
               )}
             >
               Assessoria
