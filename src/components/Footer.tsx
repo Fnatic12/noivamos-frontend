@@ -5,12 +5,12 @@ import { Instagram } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="w-full bg-[#B28800] mt-auto">
-      <div className="max-w-[1920px] mx-auto px-24 py-6 flex justify-between items-center">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 py-6 flex justify-between items-center">
         <div>
           <img 
             src="/lovable-uploads/a371eb6e-9d00-423b-bc90-a1baed416804.png" 
             alt="Noivamos Logo" 
-            className="h-8 brightness-[10] invert" 
+            className="h-8 brightness-0 invert" 
           />
         </div>
         <div className="flex items-center text-white">

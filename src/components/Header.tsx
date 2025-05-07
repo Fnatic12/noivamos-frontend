@@ -12,16 +12,16 @@ const Header = () => {
 
   return (
     <header className="w-full border-b border-gray-200">
-      <div className="max-w-[1920px] mx-auto px-8 py-4 flex justify-between items-center">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 py-4 flex justify-between items-center">
         <Link to="/">
           <img 
             src="/lovable-uploads/a371eb6e-9d00-423b-bc90-a1baed416804.png" 
             alt="Noivamos Logo" 
-            className="h-10" // Reduced from h-12 to h-10
+            className="h-8" // Reduced from h-10 to h-8
           />
         </Link>
         <nav className="flex items-center">
-          <div className="flex items-center space-x-12 mr-16">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-12 mr-8 lg:mr-16">
             <Link 
               to="/" 
               className={cn(
