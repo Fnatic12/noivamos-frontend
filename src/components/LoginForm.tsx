@@ -19,36 +19,36 @@ const LoginForm = () => {
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <h1 className="font-garamond font-bold text-6xl md:text-7xl lg:text-8xl text-noivamos-gold leading-tight mb-12">
+      <h1 className="font-garamond font-bold text-4xl md:text-5xl lg:text-6xl text-[#B28800] leading-tight mb-8">
         Entre em sua conta
       </h1>
       
-      <div className="flex flex-col space-y-4 mb-8">
-        <button className="w-full flex items-center justify-start px-4 py-4 border border-noivamos-border rounded-lg bg-white hover:bg-gray-50 transition-colors">
+      <div className="flex flex-col space-y-3 mb-6">
+        <button className="w-full flex items-center justify-start px-4 py-3 border border-noivamos-border rounded-lg bg-white hover:bg-gray-50 transition-colors">
           <Mail size={20} className="mr-4" />
           <span className="font-avenir text-base">Entrar com uma conta Google</span>
         </button>
         
-        <button className="w-full flex items-center justify-start px-4 py-4 border border-noivamos-border rounded-lg bg-white hover:bg-gray-50 transition-colors">
+        <button className="w-full flex items-center justify-start px-4 py-3 border border-noivamos-border rounded-lg bg-white hover:bg-gray-50 transition-colors">
           <Laptop size={20} className="mr-4" />
           <span className="font-avenir text-base">Entrar com uma conta Microsoft</span>
         </button>
         
-        <button className="w-full flex items-center justify-start px-4 py-4 border border-noivamos-border rounded-lg bg-white hover:bg-gray-50 transition-colors">
+        <button className="w-full flex items-center justify-start px-4 py-3 border border-noivamos-border rounded-lg bg-white hover:bg-gray-50 transition-colors">
           <Apple size={20} className="mr-4" />
           <span className="font-avenir text-base">Entrar com uma conta Apple</span>
         </button>
       </div>
       
       <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="email" className="block font-avenir text-base mb-2">
+        <div className="mb-3">
+          <label htmlFor="email" className="block font-avenir text-base mb-1">
             Email
           </label>
           <input
             type="email"
             id="email"
-            className="w-full h-12 px-4 py-2 border border-noivamos-border rounded-lg focus:outline-none focus:ring-2 focus:ring-noivamos-gold"
+            className="w-full h-10 px-4 py-2 border border-noivamos-border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#B28800]"
             placeholder="Digite seu email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -56,15 +56,15 @@ const LoginForm = () => {
           />
         </div>
         
-        <div className="mb-6">
-          <label htmlFor="password" className="block font-avenir text-base mb-2">
+        <div className="mb-4">
+          <label htmlFor="password" className="block font-avenir text-base mb-1">
             Senha
           </label>
           <div className="relative">
             <input
               type={showPassword ? "text" : "password"}
               id="password"
-              className="w-full h-12 px-4 py-2 border border-noivamos-border rounded-lg focus:outline-none focus:ring-2 focus:ring-noivamos-gold"
+              className="w-full h-10 px-4 py-2 border border-noivamos-border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#B28800]"
               placeholder="Digite sua senha"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -83,18 +83,18 @@ const LoginForm = () => {
         
         <button
           type="submit"
-          className="w-full py-4 bg-noivamos-gold hover:bg-noivamos-gold-dark text-white font-avenir font-bold rounded-lg transition-colors"
+          className="w-full py-3 bg-[#B28800] hover:bg-[#9a7600] text-white font-avenir font-bold rounded-lg transition-colors"
         >
           Entrar
         </button>
       </form>
       
-      <div className="mt-6 text-center">
-        <p className="font-avenir text-base mb-3">
-          Esqueceu sua senha? <a href="#" className="font-bold text-noivamos-gold hover:underline">clique aqui</a>
+      <div className="mt-4 text-center">
+        <p className="font-avenir text-sm mb-2">
+          Esqueceu sua senha? <a href="#" className="font-bold text-[#B28800] hover:underline">clique aqui</a>
         </p>
-        <p className="font-avenir text-base">
-          Não tem conta? <a href="#" className="font-bold text-noivamos-gold hover:underline">registra-se</a>
+        <p className="font-avenir text-sm">
+          Não tem conta? <a href="#" className="font-bold text-[#B28800] hover:underline">registra-se</a>
         </p>
       </div>
     </div>

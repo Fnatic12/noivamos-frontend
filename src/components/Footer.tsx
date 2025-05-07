@@ -4,7 +4,7 @@ import { Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-noivamos-gold mt-auto">
+    <footer className="w-full bg-[#B28800] mt-auto">
       <div className="max-w-[1920px] mx-auto px-24 py-6 flex justify-between items-center">
         <div>
           <img 
