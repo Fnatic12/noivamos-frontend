@@ -159,10 +159,12 @@ const Plans = () => {
 
       {showSuccessDialog && (
         <SuccessDialog
-          isOpen={showSuccessDialog}
-          onClose={() => {
-            setShowSuccessDialog(false);
-            navigate('/wedding');
+          open={showSuccessDialog}
+          onOpenChange={(open) => {
+            setShowSuccessDialog(open);
+            if (!open) {
+              navigate('/wedding');
+            }
           }}
           title="BEM VINDO À NOIVAMOS"
           message="Pagamento realizado com sucesso! Agora você terá uma experiência ainda melhor para gerenciar seu casamento."
