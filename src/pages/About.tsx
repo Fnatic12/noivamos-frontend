@@ -2,7 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Instagram, Tiktok } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 
 const About = () => {
   return (
@@ -56,7 +56,22 @@ const About = () => {
                   rel="noopener noreferrer" 
                   className="flex flex-col items-center hover:text-noivamos-gold transition-colors"
                 >
-                  <Tiktok size={42} />
+                  {/* Replace Tiktok with a custom SVG icon */}
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="42" 
+                    height="42" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <path d="M9 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path>
+                    <path d="M15 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
+                    <path d="M15 2v8a8 8 0 0 1-8 8"></path>
+                  </svg>
                   <span className="mt-2">TikTok</span>
                 </a>
               </div>
