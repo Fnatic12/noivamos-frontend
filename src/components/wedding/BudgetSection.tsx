@@ -124,12 +124,12 @@ const BudgetSection: React.FC<BudgetSectionProps> = ({ budget, onAddCategory }) 
       
       <h3 className="text-xl font-medium mb-4">Faturas</h3>
       <Table>
-        <TableHeader className="bg-noivamos-gold text-white">
-          <TableRow>
-            <TableHead className="font-semibold">Categoria</TableHead>
-            <TableHead className="font-semibold">Valor</TableHead>
-            <TableHead className="font-semibold">Pagamento</TableHead>
-            <TableHead className="font-semibold">Excluir Item</TableHead>
+        <TableHeader>
+          <TableRow className="bg-[#B28800] text-white">
+            <TableHead className="font-semibold text-white">Categoria</TableHead>
+            <TableHead className="font-semibold text-white">Valor</TableHead>
+            <TableHead className="font-semibold text-white">Pagamento</TableHead>
+            <TableHead className="font-semibold text-white">Excluir Item</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -162,7 +162,7 @@ const BudgetSection: React.FC<BudgetSectionProps> = ({ budget, onAddCategory }) 
         <Button 
           onClick={onAddCategory}
           variant="outline" 
-          className="bg-noivamos-gold text-white hover:bg-noivamos-gold/90"
+          className="bg-[#B28800] text-white hover:bg-[#B28800]/90"
         >
           <Plus size={16} className="mr-1" />
           Adicionar nova categoria

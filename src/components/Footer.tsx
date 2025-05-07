@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Instagram } from 'lucide-react';
+import { Instagram, Tiktok } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -15,8 +15,23 @@ const Footer = () => {
         </div>
         <div className="flex items-center text-white">
           <span className="font-avenir mr-4">Acompanhe nossas redes sociais</span>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a 
+            href="https://instagram.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Instagram"
+            className="mx-2"
+          >
             <Instagram size={20} className="text-white" />
+          </a>
+          <a 
+            href="https://tiktok.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="TikTok"
+            className="mx-2"
+          >
+            <Tiktok size={20} className="text-white" />
           </a>
         </div>
       </div>

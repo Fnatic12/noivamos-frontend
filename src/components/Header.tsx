@@ -1,44 +1,64 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 const Header = () => {
+  const location = useLocation();
+  
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
+
   return (
     <header className="w-full border-b border-gray-200">
-      <div className="max-w-[1920px] mx-auto px-8 py-6 flex justify-between items-center">
+      <div className="max-w-[1920px] mx-auto px-8 py-4 flex justify-between items-center">
         <Link to="/">
           <img 
             src="/lovable-uploads/a371eb6e-9d00-423b-bc90-a1baed416804.png" 
             alt="Noivamos Logo" 
-            className="h-8" 
+            className="h-12" // Increased from h-8 to h-12
           />
         </Link>
-        <nav className="flex items-center space-x-12">
-          <Link 
-            to="/" 
-            className="font-avenir text-base hover:text-noivamos-gold transition-colors"
-          >
-            Criar meu site
-          </Link>
-          <Link 
-            to="/wedding" 
-            className="font-avenir text-base hover:text-noivamos-gold transition-colors"
-          >
-            Meu casamento
-          </Link>
-          <Link 
-            to="/plans" 
-            className="font-avenir text-base hover:text-noivamos-gold transition-colors"
-          >
-            Planos e Recursos
-          </Link>
-          <Link 
-            to="/about" 
-            className="font-avenir text-base hover:text-noivamos-gold transition-colors"
-          >
-            Quem somos
-          </Link>
+        <nav className="flex items-center">
+          <div className="flex items-center space-x-12 mr-16">
+            <Link 
+              to="/" 
+              className={cn(
+                "font-avenir text-base transition-colors",
+                isActive("/") ? "text-noivamos-gold" : "hover:text-noivamos-gold"
+              )}
+            >
+              Criar meu site
+            </Link>
+            <Link 
+              to="/wedding" 
+              className={cn(
+                "font-avenir text-base transition-colors",
+                isActive("/wedding") ? "text-noivamos-gold" : "hover:text-noivamos-gold"
+              )}
+            >
+              Meu casamento
+            </Link>
+            <Link 
+              to="/plans" 
+              className={cn(
+                "font-avenir text-base transition-colors",
+                isActive("/plans") ? "text-noivamos-gold" : "hover:text-noivamos-gold"
+              )}
+            >
+              Planos e Recursos
+            </Link>
+            <Link 
+              to="/about" 
+              className={cn(
+                "font-avenir text-base transition-colors",
+                isActive("/about") ? "text-noivamos-gold" : "hover:text-noivamos-gold"
+              )}
+            >
+              Quem somos
+            </Link>
+          </div>
           <Link 
             to="/login" 
             className={cn(
