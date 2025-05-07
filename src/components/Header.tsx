@@ -20,7 +20,7 @@ const Header = () => {
           <img 
             src="/lovable-uploads/a371eb6e-9d00-423b-bc90-a1baed416804.png" 
             alt="Noivamos Logo" 
-            className="h-7" // Reduced from h-8 to h-7
+            className="h-6" // Reduced from h-7 to h-6
           />
         </Link>
         <nav className="flex items-center">
