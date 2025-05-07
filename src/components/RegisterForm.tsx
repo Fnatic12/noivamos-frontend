@@ -2,8 +2,11 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, Check } from 'lucide-react';
 import { Checkbox } from '@/components/ui/checkbox';
+import SuccessDialog from './SuccessDialog';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -17,6 +20,7 @@ const RegisterForm = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [acceptEmails, setAcceptEmails] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,7 +37,9 @@ const RegisterForm = () => {
       acceptTerms,
       acceptEmails
     });
-    // Here you would typically call an API to register the user
+    // Normally, you would send this to an API
+    // For now, just show the success dialog
+    setShowSuccess(true);
   };
 
   const togglePasswordVisibility = () => {
@@ -42,6 +48,12 @@ const RegisterForm = () => {
 
   const toggleConfirmPasswordVisibility = () => {
     setShowConfirmPassword(!showConfirmPassword);
+  };
+
+  const handleSuccessDialogClose = () => {
+    setShowSuccess(false);
+    // Optional: redirect to login or dashboard
+    // navigate('/login');
   };
 
   return (
@@ -325,6 +337,11 @@ const RegisterForm = () => {
           Cadastrar
         </button>
       </form>
+      
+      <SuccessDialog 
+        open={showSuccess} 
+        onOpenChange={handleSuccessDialogClose} 
+      />
     </div>
   );
 };
