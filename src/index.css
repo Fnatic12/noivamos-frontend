@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -98,4 +101,24 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: local('Avenir'), url('/fonts/Avenir-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: local('Avenir Bold'), url('/fonts/Avenir-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.elevation-1 {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }

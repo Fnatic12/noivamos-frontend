@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				noivamos: {
+					gold: '#FFC200',
+					'gold-dark': '#d6a900',
+					border: '#AAAAB0',
+					placeholder: '#777777'
 				}
 			},
 			borderRadius: {
@@ -89,6 +96,17 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			fontFamily: {
+				'garamond': ['EB Garamond', 'serif'],
+				'avenir': ['Avenir', 'Helvetica', 'Arial', 'sans-serif']
+			},
+			spacing: {
+				'stack-md': '24px',
+				'inline-md': '24px',
+			},
+			gridTemplateColumns: {
+				'12': 'repeat(12, minmax(0, 1fr))',
 			}
 		}
 	},
