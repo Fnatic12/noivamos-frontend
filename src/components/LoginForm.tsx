@@ -3,14 +3,18 @@ import React, { useState } from 'react';
 import { Eye, EyeOff, Apple, Mail, Laptop } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const LoginForm = () => {
+interface LoginFormProps {
+  isAdvisor?: boolean;
+}
+
+const LoginForm = ({ isAdvisor = false }: LoginFormProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Login attempt with:', { email, password });
+    console.log('Login attempt with:', { email, password, isAdvisor });
     // Here you would typically call an authentication API
   };
 
@@ -21,7 +25,7 @@ const LoginForm = () => {
   return (
     <div className="w-full max-w-md mx-auto">
       <h1 className="font-garamond font-bold text-4xl md:text-5xl lg:text-6xl text-[#B28800] leading-tight mb-8">
-        Entre em sua conta
+        {isAdvisor ? "Olá Assessor. Entre em sua conta!" : "Entre em sua conta"}
       </h1>
       
       <div className="flex flex-col space-y-3 mb-6">
@@ -95,7 +99,7 @@ const LoginForm = () => {
           Esqueceu sua senha? <Link to="/forgot-password" className="font-bold text-[#B28800] hover:underline">clique aqui</Link>
         </p>
         <p className="font-avenir text-sm">
-          Não tem conta? <Link to="/register" className="font-bold text-[#B28800] hover:underline">registre-se</Link>
+          Não tem conta? <Link to={isAdvisor ? "/advisor/register" : "/register"} className="font-bold text-[#B28800] hover:underline">registre-se</Link>
         </p>
       </div>
     </div>
