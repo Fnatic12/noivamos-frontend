@@ -22,7 +22,7 @@ const Header = () => {
             Criar meu site
           </Link>
           <Link 
-            to="/" 
+            to="/wedding" 
             className="font-avenir text-base hover:text-noivamos-gold transition-colors"
           >
             Meu casamento
@@ -40,7 +40,7 @@ const Header = () => {
             Quem somos
           </Link>
           <Link 
-            to="/" 
+            to="/login" 
             className={cn(
               "flex items-center font-avenir font-bold text-base",
               "hover:text-noivamos-gold transition-colors ml-4"
