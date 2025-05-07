@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SuccessDialog from './SuccessDialog';
 import { Input } from './ui/input';
+import { Link } from 'react-router-dom';
 
 const ForgotPasswordForm = () => {
   const navigate = useNavigate();
@@ -23,8 +24,8 @@ const ForgotPasswordForm = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto">
-      <h1 className="font-garamond font-bold text-[#B28800] text-4xl md:text-5xl text-center mb-4">
+    <div className="w-full">
+      <h1 className="font-garamond font-bold text-[#B28800] text-4xl text-center mb-2">
         Noivamos
       </h1>
       
@@ -32,7 +33,7 @@ const ForgotPasswordForm = () => {
         Recuperação de senha
       </h2>
       
-      <p className="text-center mb-8 text-gray-700">
+      <p className="text-center mb-6 text-gray-700 px-4">
         Insira o endereço de e-mail ou o número do telefone celular associado à sua conta.
       </p>
       
@@ -62,7 +63,7 @@ const ForgotPasswordForm = () => {
       
       <div className="mt-4 text-center">
         <p className="font-avenir text-sm">
-          Lembrou sua senha? <a href="/login" className="font-bold text-[#B28800] hover:underline">Voltar para login</a>
+          Lembrou sua senha? <Link to="/login" className="font-bold text-[#B28800] hover:underline">Voltar para login</Link>
         </p>
       </div>
       
